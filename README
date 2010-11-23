@@ -6,7 +6,7 @@ to be installed. Please feel free to extend this little script as you desire.
 
 ===== INSTALLING python-ntlm =====
 1. Open terminal
-2. Change directory to - "LEO Python"/project-ntlm
+2. Change directory to - "LEO Python"/python-ntlm
 3. Run - python setup.py install
 
 This will install the dependency smoothly only if you have Setuptools. For those, who do not have
