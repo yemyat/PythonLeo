@@ -16,8 +16,8 @@ class PythonLeo:
 		response = urllib2.urlopen(url)
 		return response
 		
-	def parse_id(self, which_id, response):
-		response_id = re.findall(which_id+"=(.{38})",response.read())
+	def parse_id(self, which_id, from_url):
+		response_id = re.findall(which_id+"=(.{38})",from_url.read())
 		return response_id
 
 if __name__ == "__main__":
