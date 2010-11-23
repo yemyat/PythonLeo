@@ -44,7 +44,7 @@ if __name__ == "__main__":
         url = 'http://leo.rp.edu.sg/workspace/studentGrades.asp'
         url2 = 'http://leo3.rp.edu.sg//projectweb/student_summary.asp?'
 
-        myGrades = PythonLeo("91178", "pyro1$cute") # student ID & Password
+        myGrades = PythonLeo("12345", "UrPasswordGoesHere") # student ID & Password
 
         course_id_list = removeDuplicate(myGrades.parse_id("courseid", myGrades.open_url(url)))
         project_id_list = myGrades.parse_id("projectid", myGrades.open_url(url))
