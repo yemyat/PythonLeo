@@ -1,7 +1,16 @@
 This script requires following dependencies
 
-1. python-ntlm (http://code.google.com/p/python-ntlm/)
+1. python-ntlm
 
 to be installed. Please feel free to extend this little script as you desire.
+
+===== INSTALLING python-ntlm =====
+1. Open terminal
+2. Change directory to - "LEO Python"/project-ntlm
+3. Run - python setup.py install
+
+This will install the dependency smoothly only if you have Setuptools. For those, who do not have
+Setuptools, please download it at http://pypi.python.org/pypi/setuptools
+
 
 - Developed by a bored RP student (http://jeffis.me) 
