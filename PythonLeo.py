@@ -1,5 +1,6 @@
-import urllib2
 from ntlm import HTTPNtlmAuthHandler
+from Tkinter import *
+import urllib2
 import re
 
 class PythonLeo:
@@ -21,7 +22,7 @@ class PythonLeo:
 		return response_id
 
 if __name__ == "__main__":
-	URL_LIST = {"current_module":"http://leo.rp.edu.sg/workspace/studentModule.asp?site=3", #to get project_id , group_id
+	URL_LIST = {"current_module":"http://leo.rp.edu.sg/workspace/studentModule.asp?", #to get project_id , group_id
 	"current_problem":"http://leo3.rp.edu.sg//projectweb/project_menu.asp?", #to get topic_id
 	"problem_download":"http://leo.rp.edu.sg/projectweb/projectupload/savefolderas.asp?folder=/databank/projectbank/"
 	};
@@ -32,7 +33,7 @@ if __name__ == "__main__":
 	topic_id_list = test.parse_id("topicid",test.open_url(URL_LIST["current_problem"]+
 										"projectid="+str(project_id_list[-1])+
 										"&groupid="+str(group_id_list[-1])))
-										
+			
 	get_download_url = test.open_url(URL_LIST["problem_download"]+topic_id_list[-1])
 	
 	download_url = "http://leo.rp.edu.sg"+ re.search('HREF=\"(.+?zip)',get_download_url.read()).groups()[0]
@@ -40,8 +41,6 @@ if __name__ == "__main__":
 	zip_file = open("problem.zip","wb")
 	zip_file.write(	test.open_url(download_url).read())
 	zip_file.close()
-
-	
 	
 	
 	
