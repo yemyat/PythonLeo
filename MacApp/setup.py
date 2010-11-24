@@ -16,7 +16,7 @@ ez_setup.use_setuptools()
 import sys
 from setuptools import setup
 
-mainscript = 'PythonLeoGUI.py'
+mainscript = 'PSDownloaderGUI.py'
 
 if sys.platform == 'darwin':
     extra_options = dict(
