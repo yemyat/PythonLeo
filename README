@@ -12,7 +12,14 @@ to be installed. Please feel free to extend this little script as you desire.
 This will install the dependency smoothly only if you have Setuptools. For those, who do not have
 Setuptools, please download it at http://pypi.python.org/pypi/setuptools
 
+===== NOTE =====
+.exe and .app files are created using py2exe and py2app. The latest changes made at the script may not be included in those .exe and .app files. Having said that, MacApp folder and WinApp folder maybe outdated. 
 
+<<<<<<< HEAD
 - Developed by lazy RP students Ye Myat Min(http://jeffis.me) & Kaung Htet Zaw. You can ask questions to at yemyat@gmail.com or emoosx@gmail.com
+=======
+- Developed by a group of lazy RP students. You can ask questions to us at yemyat@gmail.com and emoosx@gmail.com. We are willing to collaborate with anyone who is willing to contribute to this project.
 
-Follow us on @jeffwadsoeva , @emoosx
+Follow us on Twitter at @jeffwadsoeva and @emoosx
+>>>>>>> 6e2ce80e22dc43e106089e3d886dcbfcfdf9989c
+

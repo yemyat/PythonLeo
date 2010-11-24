@@ -1,3 +1,3 @@
 from distutils.core import setup
 import py2exe
-setup(console=['PythonLeoGUI.py'])
+setup(console=['PSDownloaderGUI.py'])

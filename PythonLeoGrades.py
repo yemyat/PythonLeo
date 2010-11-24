@@ -1,25 +1,6 @@
 import urllib2
 import re
-from ntlm import HTTPNtlmAuthHandler
-
-
-class PythonLeo:
-    def __init__(self, username, password):
-        self.username = "RP\\" + username
-        self.password = password
-        self.password_manager = urllib2.HTTPPasswordMgrWithDefaultRealm()
-        ntlm_auth = HTTPNtlmAuthHandler.HTTPNtlmAuthHandler(self.password_manager)
-        opener = urllib2.build_opener(ntlm_auth)
-        urllib2.install_opener(opener)
-
-    def open_url(self, url):
-        self.password_manager.add_password(None, url, self.username, self.password)
-        response = urllib2.urlopen(url)
-        return response
-
-    def parse_id(self, which_id, from_url):
-        response_id = re.findall(which_id+"=(.{38})",from_url.read())
-        return response_id
+import PythonLeo
 
 def removeDuplicate(foo):
     bar = []
@@ -44,7 +25,7 @@ if __name__ == "__main__":
         url = 'http://leo.rp.edu.sg/workspace/studentGrades.asp'
         url2 = 'http://leo3.rp.edu.sg//projectweb/student_summary.asp?'
 
-        myGrades = PythonLeo("91148", "h3110myd3@r") # student ID & Password
+        myGrades = PythonLeo.PythonLeo("91178", "pyro1$cute") # student ID & Password
 
         course_id_list = removeDuplicate(myGrades.parse_id("courseid", myGrades.open_url(url)))
         project_id_list = myGrades.parse_id("projectid", myGrades.open_url(url))
