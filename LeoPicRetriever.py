@@ -1,5 +1,4 @@
 import urllib2
-import os
 # retrieves the photo of the Student or ( Staff ~ coming soon )
 def main():
 	url = 'http://www.rp.edu.sg/staffdirectory/ShowImage.aspx?id='
@@ -15,7 +14,6 @@ def main():
 	f.write(image)
 	f.close()
 	print 'Done'
-	os.startfile(image)
 	
 if __name__ == '__main__':
 	main()
