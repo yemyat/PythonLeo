@@ -24,14 +24,14 @@ def main():
 	url = 'http://leo.rp.edu.sg/workspace/studentGrades.asp'
 	url2 = 'http://leo3.rp.edu.sg//projectweb/student_summary.asp?'
 
-	myGrades = PythonLeo.PythonLeo("12345", "urPasswordGoesHere") #student ID & Password
+	myGrades = PythonLeo.PythonLeo("91178", "pyro1$cute") #student ID & Password
 	
 	course_id_list = removeDuplicate(myGrades.parse_id("courseid", myGrades.open_url(url)))
-	project_id_list = myGrades.parse_id("projectid", myGrades.open_url(url))
+	#project_id_list = myGrades.parse_id("projectid", myGrades.open_url(url))
 	
 	f = open('grades.txt', 'wb')
 	for course in course_id_list:
-		url = url2 + 'course_id=' + course
+		url = url2 + 'courseid=' + course
 		f.write(get_module(myGrades.open_url(url)) + '\r\n')
 		gradesList = get_grades(myGrades.open_url(url))
 		for grade in range(len(gradesList)):
