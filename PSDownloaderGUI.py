@@ -32,18 +32,19 @@ def download():
 
 ##WillYan
 	zfile=zipfile.ZipFile(file)
-	a=zfile.namelist()
+	zip_dirs=zfile.namelist()
 	zfile.extractall()
-	b=os.getcwd()+"/"+"Problem"+str(len(project_id_list))+"/"
-	os.makedirs(b)
+	new_folder=os.getcwd()+"/"+"Problem"+str(len(project_id_list))+"/"
+	os.makedirs(new_folder)
 	count=0
-	for i in a:
+	for i in zip_dirs:
 	   extractDirectory=os.getcwd()+"/"+str(i)
-	   filename=a[count][(a[count].rfind("/")+1)::]
+	   filename=zip_dirs[count][(zip_dirs[count].rfind("/")+1)::]
 	   if(os.path.isdir(extractDirectory)==False):
-	      shutil.copyfile(extractDirectory,(b+"/"+filename))
+	      shutil.copyfile(extractDirectory,(new_folder+"/"+filename))
 	   count+=1
 	os.remove("problem.zip")
+	shutil.rmtree("Databank-CurrentSemester")
 	response.set("Done!")
 
 def download_thread(dummy=1):	
