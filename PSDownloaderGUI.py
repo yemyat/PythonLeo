@@ -4,7 +4,7 @@ import PythonLeo
 from Tkinter import *
 import threading
 
-URL_LIST = {"current_module":"http://leo.rp.edu.sg/workspace/studentModule.asp?", #to get project_id , group_id
+URL_LIST = {"current_module":"http://leo.rp.edu.sg/workspace/studentModule.asp?site=3", #to get project_id , group_id
 				"current_problem":"http://leo3.rp.edu.sg//projectweb/project_menu.asp?", #to get topic_id, year2,3=>leo3, year1=>leo1
 				"problem_download":"http://leo.rp.edu.sg/projectweb/projectupload/savefolderas.asp?folder=/databank/projectbank/"
 };
