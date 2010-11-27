@@ -10,7 +10,7 @@ URL_LIST = {"current_module":"http://leo.rp.edu.sg/workspace/studentModule.asp?"
 };
 
 def download():
-	response.set("Connecting")
+	response.set("Connecting") 
 	leo = PythonLeo.PythonLeo(username_field.get(),password_field.get()) #e.g. 91224, 12345
 	project_id_list = leo.parse_id("projectid",leo.open_url(URL_LIST["current_module"]))
 	group_id_list = leo.parse_id("groupid",leo.open_url(URL_LIST["current_module"]))
@@ -21,6 +21,7 @@ def download():
 	get_download_url = leo.open_url(URL_LIST["problem_download"]+topic_id_list[-1])
 	
 	download_url = "http://leo.rp.edu.sg"+ re.search('HREF=\"(.+?zip)',get_download_url.read()).groups()[0]
+	print download_url
 	response.set("Downloading")
 	os.chdir(os.path.expanduser("~/Desktop"))
 	zip_file = open("problem.zip","wb")
