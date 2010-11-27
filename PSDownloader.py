@@ -7,7 +7,7 @@ if __name__ == "__main__":
 	"problem_download":"http://leo.rp.edu.sg/projectweb/projectupload/savefolderas.asp?folder=/databank/projectbank/"
 	};
 
-	leo = PythonLeo.PythonLeo("username","password") #e.g. 91224, 12345
+	leo = PythonLeo.PythonLeo("91211","YS0gxyyq") #e.g. 91224, 12345
 	project_id_list = leo.parse_id("projectid",leo.open_url(URL_LIST["current_module"]))
 	group_id_list = leo.parse_id("groupid",leo.open_url(URL_LIST["current_module"]))
 	topic_id_list = leo.parse_id("topicid",leo.open_url(URL_LIST["current_problem"]+
@@ -16,8 +16,13 @@ if __name__ == "__main__":
 			
 	get_download_url = leo.open_url(URL_LIST["problem_download"]+topic_id_list[-1])
 	
+	
 	download_url = "http://leo.rp.edu.sg"+ re.search('HREF=\"(.+?zip)',get_download_url.read()).groups()[0]
+	print project_id_list[-1]
+	print group_id_list[-1]
+	print download_url
 	os.chdir(os.path.expanduser("~/Desktop"))
-	zip_file = open("problem.zip","wb")
-	zip_file.write(	leo.open_url(download_url).read())
-	zip_file.close()
+	#zip_file = open("problem.zip","wb")
+	#zip_file.write(	leo.open_url(download_url).read())
+	#zip_file.close()
+	
