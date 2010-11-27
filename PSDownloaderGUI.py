@@ -8,6 +8,7 @@ import zipfile,shutil
 '''
 TODO
 1. Add error-handling
+2. If the last problem was assignment, download the one before.
 '''
 
 
