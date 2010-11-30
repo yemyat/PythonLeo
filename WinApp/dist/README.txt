@@ -1,1 +1,0 @@
-Please run PythonLeoGUI.exe. For easier access, put it as a shortcut on your desktop.

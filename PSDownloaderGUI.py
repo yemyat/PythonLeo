@@ -62,7 +62,7 @@ if __name__ == "__main__":
 	root = Tk()
 	root.title("LEO PS Downloader")
 
-	main_frame = Frame(root,width=200,height=120)
+	main_frame = Frame(root,width=240,height=120)
 	main_frame.grid(column=0,row=0)
 
 	username_label = Label(main_frame, text="Username")
