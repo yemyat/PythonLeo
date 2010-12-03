@@ -1,0 +1,21 @@
+This script requires following dependencies
+
+1. python-ntlm
+
+to be installed. Please feel free to extend this little script as you desire.
+
+===== INSTALLING python-ntlm =====
+1. Open terminal
+2. Change directory to - "LEO Python"/python-ntlm
+3. Run - python setup.py install
+
+This will install the dependency smoothly only if you have Setuptools. For those, who do not have
+Setuptools, please download it at http://pypi.python.org/pypi/setuptools
+
+===== NOTE =====
+.exe and .app files are created using py2exe and py2app. The latest changes made at the script may not be included in those .exe and .app files. Having said that, MacApp folder and WinApp folder maybe outdated. 
+
+- Developed by a group of lazy RP students, Ye Myat Min & Kaung Htet Zaw. You can ask questions to us at yemyat@gmail.com and emoosx@gmail.com. We are willing to collaborate with anyone who is willing to contribute to this project.
+
+Follow us on Twitter at @jeffwadsoeva and @emoosx
+
