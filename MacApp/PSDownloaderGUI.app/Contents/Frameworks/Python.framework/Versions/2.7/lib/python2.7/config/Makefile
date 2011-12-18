@@ -58,17 +58,17 @@ INSTALL_SHARED= ${INSTALL} -m 555
 MAKESETUP=      $(srcdir)/Modules/makesetup
 
 # Compiler options
-OPT=		-DNDEBUG -g -O3 
+OPT=		-DNDEBUG -g -O3
 BASECFLAGS=	 -fno-strict-aliasing -fno-common -dynamic
 CFLAGS=		$(BASECFLAGS) -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch ppc -arch i386 -g -O2 $(OPT) $(EXTRA_CFLAGS)
 # Both CPPFLAGS and LDFLAGS need to contain the shell's value for setup.py to
 # be able to build extension modules using the directories specified in the
 # environment variables
-CPPFLAGS=	-I. -IInclude -I$(srcdir)/Include -isysroot /Developer/SDKs/MacOSX10.4u.sdk 
-LDFLAGS=	-arch ppc -arch i386 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -isysroot /Developer/SDKs/MacOSX10.4u.sdk -g 
-LDLAST=		
-SGI_ABI=	
-CCSHARED=	
+CPPFLAGS=	-I. -IInclude -I$(srcdir)/Include -isysroot /Developer/SDKs/MacOSX10.4u.sdk
+LDFLAGS=	-arch ppc -arch i386 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -isysroot /Developer/SDKs/MacOSX10.4u.sdk -g
+LDLAST=
+SGI_ABI=
+CCSHARED=
 LINKFORSHARED=	-u _PyMac_Error $(PYTHONFRAMEWORKDIR)/Versions/$(VERSION)/$(PYTHONFRAMEWORK)
 ARFLAGS=	rc
 # Extra C flags added for building the interpreter object files.
@@ -112,7 +112,7 @@ LDCXXSHARED=	$(CXX) $(LDFLAGS) -bundle -undefined dynamic_lookup
 DESTSHARED=	$(BINLIBDEST)/lib-dynload
 
 # Executable suffix (.exe on Windows and Mac OS X)
-EXE=		
+EXE=
 BUILDEXE=	.exe
 
 # Short name and location for Mac OS X Python framework
@@ -158,15 +158,15 @@ DIST=		$(DISTFILES) $(DISTDIRS)
 
 LIBRARY=	libpython$(VERSION).a
 LDLIBRARY=      $(PYTHONFRAMEWORKDIR)/Versions/$(VERSION)/$(PYTHONFRAMEWORK)
-BLDLIBRARY=     
-DLLLIBRARY=	
-LDLIBRARYDIR=   
+BLDLIBRARY=
+DLLLIBRARY=
+LDLIBRARYDIR=
 INSTSONAME=	$(LDLIBRARY)
 
 
 LIBS=		-ldl  -framework CoreFoundation
-LIBM=		
-LIBC=		
+LIBM=
+LIBC=
 SYSLIBS=	$(LIBM) $(LIBC)
 SHLIBS=		$(LIBS)
 
@@ -175,7 +175,7 @@ DLINCLDIR=	.
 DYNLOADFILE=	dynload_shlib.o
 MACHDEP_OBJS=	Python/mactoolboxglue.o
 LIBOBJDIR=	Python/
-LIBOBJS=	
+LIBOBJS=
 UNICODE_OBJS=   Objects/unicodeobject.o Objects/unicodectype.o
 
 PYTHON=		python$(EXE)
@@ -187,7 +187,7 @@ PROFILE_TASK=	$(srcdir)/Tools/pybench/pybench.py -n 2 --with-gc --with-syscheck
 
 # === Definitions added by makesetup ===
 
-LOCALMODLIBS=          
+LOCALMODLIBS=
 BASEMODLIBS=
 GLHACK=-Dclear=__GLclear
 PYTHONPATH=$(COREPYTHONPATH)
@@ -212,7 +212,7 @@ MODULE_OBJS=	\
 		Modules/gcmodule.o
 
 # Used of signalmodule.o is not available
-SIGNAL_OBJS=	
+SIGNAL_OBJS=
 
 
 ##########################################################################
@@ -222,7 +222,7 @@ GRAMMAR_C=	$(srcdir)/Python/graminit.c
 GRAMMAR_INPUT=	$(srcdir)/Grammar/Grammar
 
 
-LIBFFI_INCLUDEDIR=	
+LIBFFI_INCLUDEDIR=
 
 ##########################################################################
 # Parser
@@ -446,7 +446,7 @@ libpython$(VERSION).so: $(LIBRARY_OBJS)
 
 libpython$(VERSION).dylib: $(LIBRARY_OBJS)
 	 $(CC) -dynamiclib -Wl,-single_module $(LDFLAGS) -undefined dynamic_lookup -Wl,-install_name,$(prefix)/lib/libpython$(VERSION).dylib -Wl,-compatibility_version,$(VERSION) -Wl,-current_version,$(VERSION) -o $@ $(LIBRARY_OBJS) $(SHLIBS) $(LIBC) $(LIBM) $(LDLAST); \
-		 
+
 
 libpython$(VERSION).sl: $(LIBRARY_OBJS)
 	$(LDSHARED) $(LDFLAGS) -o $@ $(LIBRARY_OBJS) $(MODLIBS) $(SHLIBS) $(LIBC) $(LIBM) $(LDLAST)
@@ -861,7 +861,7 @@ PLATMACDIRS= plat-mac plat-mac/Carbon plat-mac/lib-scriptpackages \
 	plat-mac/lib-scriptpackages/Netscape \
 	plat-mac/lib-scriptpackages/StdSuites \
 	plat-mac/lib-scriptpackages/SystemEvents \
-	plat-mac/lib-scriptpackages/Terminal 
+	plat-mac/lib-scriptpackages/Terminal
 PLATMACPATH=:plat-mac:plat-mac/lib-scriptpackages
 LIBSUBDIRS=	lib-tk lib-tk/test lib-tk/test/test_tkinter \
                 lib-tk/test/test_ttk site-packages test test/data \
@@ -1266,7 +1266,7 @@ Python/thread.o:  $(srcdir)/Python/thread_atheos.h $(srcdir)/Python/thread_beos.
 .PHONY: maninstall libinstall inclinstall libainstall sharedinstall
 .PHONY: frameworkinstall frameworkinstallframework frameworkinstallstructure
 .PHONY: frameworkinstallmaclib frameworkinstallapps frameworkinstallunixtools
-.PHONY: frameworkaltinstallunixtools recheck autoconf clean clobber distclean 
+.PHONY: frameworkaltinstallunixtools recheck autoconf clean clobber distclean
 .PHONY: smelly funny patchcheck
 .PHONY: gdbhooks
 

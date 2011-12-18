@@ -29,7 +29,7 @@ namespace eval ::tk::dialog::file {}
 #	When -multiple is set to 0, this returns the absolute pathname
 #	of the selected file. (NOTE: This is not the same as a single
 #	element list.)
-# 
+#
 #	When -multiple is set to > 0, this returns a Tcl list of absolute
 #       pathnames. The argument for -multiple is ignored, but for consistency
 #       with Windows it defines the maximum amount of memory to allocate for
@@ -500,7 +500,7 @@ proc ::tk::MotifFDialog_InterpFilter {w} {
     if {[file pathtype $text] eq "relative"} {
 	set relative 1
     } elseif {$badTilde} {
-	set relative 1	
+	set relative 1
     }
 
     if {$relative} {
@@ -547,7 +547,7 @@ proc ::tk::MotifFDialog_Update {w} {
     $data(sEnt) delete 0 end
     $data(sEnt) insert 0 [::tk::dialog::file::JoinFile $data(selectPath) \
 	    $data(selectFile)]
- 
+
     MotifFDialog_LoadFiles $w
 }
 
@@ -621,7 +621,7 @@ proc ::tk::MotifFDialog_LoadFiles {w} {
 # 	w		The pathname of the dialog box.
 #
 # Results:
-#	None.	
+#	None.
 
 proc ::tk::MotifFDialog_BrowseDList {w} {
     upvar ::tk::dialog::file::[winfo name $w] data
@@ -667,7 +667,7 @@ proc ::tk::MotifFDialog_BrowseDList {w} {
 # 	w		The pathname of the dialog box.
 #
 # Results:
-#	None.	
+#	None.
 
 proc ::tk::MotifFDialog_ActivateDList {w} {
     upvar ::tk::dialog::file::[winfo name $w] data
@@ -715,7 +715,7 @@ proc ::tk::MotifFDialog_ActivateDList {w} {
 # 	w		The pathname of the dialog box.
 #
 # Results:
-#	None.	
+#	None.
 
 proc ::tk::MotifFDialog_BrowseFList {w} {
     upvar ::tk::dialog::file::[winfo name $w] data
@@ -735,9 +735,9 @@ proc ::tk::MotifFDialog_BrowseFList {w} {
     $data(fEnt) insert 0 [::tk::dialog::file::JoinFile $data(selectPath) \
 	    $data(filter)]
     $data(fEnt) xview end
- 
-    # if it's a multiple selection box, just put in the filenames 
-    # otherwise put in the full path as usual 
+
+    # if it's a multiple selection box, just put in the filenames
+    # otherwise put in the full path as usual
     $data(sEnt) delete 0 end
     if {$data(-multiple) != 0} {
 	$data(sEnt) insert 0 $data(selectFile)
@@ -757,7 +757,7 @@ proc ::tk::MotifFDialog_BrowseFList {w} {
 # 	w		The pathname of the dialog box.
 #
 # Results:
-#	None.	
+#	None.
 
 proc ::tk::MotifFDialog_ActivateFList {w} {
     upvar ::tk::dialog::file::[winfo name $w] data
@@ -783,7 +783,7 @@ proc ::tk::MotifFDialog_ActivateFList {w} {
 # 	w		The pathname of the dialog box.
 #
 # Results:
-#	None.	
+#	None.
 
 proc ::tk::MotifFDialog_ActivateFEnt {w} {
     upvar ::tk::dialog::file::[winfo name $w] data
@@ -798,7 +798,7 @@ proc ::tk::MotifFDialog_ActivateFEnt {w} {
 # ::tk::MotifFDialog_ActivateSEnt --
 #
 #	This procedure is called when the user presses Return inside
-#	the "selection" entry. It sets the ::tk::Priv(selectFilePath) 
+#	the "selection" entry. It sets the ::tk::Priv(selectFilePath)
 #	variable so that the vwait loop in tk::MotifFDialog will be
 #	terminated.
 #
@@ -806,7 +806,7 @@ proc ::tk::MotifFDialog_ActivateFEnt {w} {
 # 	w		The pathname of the dialog box.
 #
 # Results:
-#	None.	
+#	None.
 
 proc ::tk::MotifFDialog_ActivateSEnt {w} {
     variable ::tk::Priv
@@ -925,7 +925,7 @@ proc ::tk::ListBoxKeyAccel_Unset {w} {
 #	key		The key which the user just pressed.
 #
 # Results:
-#	None.	
+#	None.
 
 proc ::tk::ListBoxKeyAccel_Key {w key} {
     variable ::tk::Priv
