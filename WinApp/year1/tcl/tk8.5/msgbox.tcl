@@ -141,7 +141,7 @@ proc ::tk::MessageBox {args} {
 
     #
     # The default value of the title is space (" ") not the empty string
-    # because for some window managers, a 
+    # because for some window managers, a
     #		wm title .foo ""
     # causes the window title to be "foo" instead of the empty string.
     #
@@ -177,7 +177,7 @@ proc ::tk::MessageBox {args} {
     }
 
     switch -- $data(-type) {
-	abortretryignore { 
+	abortretryignore {
 	    set names [list abort retry ignore]
 	    set labels [list &Abort &Retry &Ignore]
 	    set cancel abort
@@ -219,7 +219,7 @@ proc ::tk::MessageBox {args} {
 	lappend buttons [list $name -text [mc $lab]]
     }
 
-    # If no default button was specified, the default default is the 
+    # If no default button was specified, the default default is the
     # first button (Bug: 2218).
 
     if {$data(-default) eq ""} {
