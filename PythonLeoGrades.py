@@ -17,7 +17,7 @@ def get_grades(from_url):
 
 def get_module(from_url):
     #module = re.search('([A-Z]\d\d\d-[12348]-[WE]\d\d[A-Z]-[ABC])', from_url.read())
-    module = re.search('([A-Z]\d\d\d)', from_url.read())
+    module = re.search('([A-Z]\d{3})', from_url.read())
     return module.groups()[0]
 
 def main():
